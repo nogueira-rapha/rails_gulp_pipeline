@@ -25,3 +25,9 @@ Things you may want to cover:
 
 
 rails new -J --skip-asset-pipeline --skip-action-cable --skip-action-mailbox --skip-action-text --skip-active-storage --skip-active-job --skip-hotwire --skip-jbuilder --database=postgresql -B --minimal .
+
+adicionar usuário e senha do database no database.yml
+
+rails db:create
+
+rails s -b 0.0.0.0 -p 3000
