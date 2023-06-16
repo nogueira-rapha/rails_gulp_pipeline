@@ -1,19 +1,28 @@
-var publicAssets = "./public/assets";
-var sourceFiles  = "./app/assets";
+var publicAssetsBasePath = "./public/assets";
+var sourceFilesBasePath  = "./app/assets";
 
 module.exports = {
-  publicAssets: publicAssets,
-  images: {
-    src: sourceFiles + "/images/**",
-    dest: publicAssets + "/images"
+  publicAssetsBasePath: publicAssetsBasePath,
+  publicJsAssetsPath: publicAssetsBasePath + '/javascripts',
+  publicJsBundleAssetsPath: publicAssetsBasePath + '/javascripts/bundle.js',
+  publicStyleAssetsPath: publicAssetsBasePath + '/stylesheets',
+  publicImagesAssetsPath: publicAssetsBasePath + '/images',
+  publicFontsAssetsPath: publicAssetsBasePath + '/fonts',
+  browserSync: {
+    proxy: 'localhost:3000',
+    files: ['./app/views/**']
   },
   fonts: {
-    src: sourceFiles + "/fonts/**",
-    dest: publicAssets + "/fonts"
+    src: sourceFilesBasePath + '/fonts/**',
+    dest: publicAssetsBasePath + '/fonts'
+  },
+  images: {
+    src: sourceFilesBasePath + "/images/**",
+    dest: publicAssetsBasePath + "/images"
   },
   stylesheets: {
-    src: sourceFiles + "/stylesheets/**/*.scss",
-    dest: publicAssets + "/stylesheets",
+    src: sourceFilesBasePath + "/stylesheets/**/*.scss",
+    dest: publicAssetsBasePath + "/stylesheets",
     settings: {
       indentedSyntax: false, // Enable .sass syntax!
       imagePath: '/assets/images' // Used by the image-url helper
@@ -23,19 +32,18 @@ module.exports = {
     }
   },
   javascripts:{
-    src: [sourceFiles + "/javascripts/**/*.js", "!" + sourceFiles + "/javascripts/bundle.js"],
-    dest: publicAssets + "/javascripts",
-    output_filename: "app.min.js"
-  },
-  bundle: {
-    src: sourceFiles + "/javascripts/bundle.js",
-    dest: publicAssets + "/javascripts",
-    fileinclude_options:  {
-      prefix: '@@',
-      basepath: '@file',
-      context: {
-        nodeRoot: '../../../'
+    src: sourceFilesBasePath + "/javascripts/**/*.js",
+    dest: publicAssetsBasePath + "/javascripts",
+    bundle: {
+      src: sourceFilesBasePath + "/javascripts/bundle.js",
+      fileinclude_options:  {
+        prefix: '@@',
+        basepath: '@file',
+        context: {
+          nodeRoot: '../../../'
+        }
       }
-    }
-  }
+    },
+    filename: "app.min.js"
+  },
 };
