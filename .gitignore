@@ -23,3 +23,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+.tool-versions
+
+node_modules/
+
+package-lock.json
