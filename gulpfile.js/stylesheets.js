@@ -6,7 +6,6 @@ const config        = require('./config').stylesheets;
 const autoprefixer  = require('gulp-autoprefixer');
 
 exports.stylesheets = function stylesheets(done) {
-  console.log(config);
   src(config.src)
     .pipe(sass(config.settings))
     .on('error', handleErrors)
