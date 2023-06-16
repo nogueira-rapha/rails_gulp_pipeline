@@ -21,5 +21,21 @@ module.exports = {
     prefixer: {
       browsers: ['last 2 versions']
     }
+  },
+  javascripts:{
+    src: [sourceFiles + "/javascripts/**/*.js", "!" + sourceFiles + "/javascripts/bundle.js"],
+    dest: publicAssets + "/javascripts",
+    output_filename: "app.min.js"
+  },
+  bundle: {
+    src: sourceFiles + "/javascripts/bundle.js",
+    dest: publicAssets + "/javascripts",
+    fileinclude_options:  {
+      prefix: '@@',
+      basepath: '@file',
+      context: {
+        nodeRoot: '../../../'
+      }
+    }
   }
 };
