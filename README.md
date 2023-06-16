@@ -31,3 +31,6 @@ adicionar usuário e senha do database no database.yml
 rails db:create
 
 rails s -b 0.0.0.0 -p 3000
+
+criar o arquivo package.json
+npm init -y
