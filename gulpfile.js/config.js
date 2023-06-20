@@ -44,6 +44,6 @@ module.exports = {
         }
       }
     },
-    filename: "app.min.js"
+    filename: "application.min.js"
   },
 };
