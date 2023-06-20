@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Rails application with gulp asset pipeline",
   "main": "gulpfile.js",
-  "scripts": {
-    "postinstall": "gulp build --verbose"
-  },
   "author": "Raphael Nogueira",
   "license": "ISC",
   "devDependencies": {
